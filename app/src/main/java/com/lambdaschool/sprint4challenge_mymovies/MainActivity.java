@@ -1,14 +1,7 @@
 package com.lambdaschool.sprint4challenge_mymovies;
 
-import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
-
-import com.lambdaschool.sprint4challenge_mymovies.apiaccess.MovieDbDao;
-import com.lambdaschool.sprint4challenge_mymovies.apiaccess.MovieOverview;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
