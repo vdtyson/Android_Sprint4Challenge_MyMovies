@@ -1,5 +1,7 @@
 package com.lambdaschool.sprint4challenge_mymovies.model
 
+
+
 class MovieSearchResult(val results: List<MovieOverview>)
 
 class MovieOverview(
