@@ -4,7 +4,7 @@
 
 **Please read this entire README to make sure you understand what is expected of you before you begin.**
 
-This sprint challenge is designed to ensure that you are competent with the concepts taught throughout Sprint 4.
+This sprint challenge is designed to ensure that you are competent with the concepts taught throughout the Sprint covering Data Persistence.
 
 In your solution, it is especially important that you follow best practices such as MVC and good, consistent code style. You will be scored on these aspects as well as the project MVP (minimum viable product) requirements below.
 
