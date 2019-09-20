@@ -22,7 +22,7 @@ This screen recording previews the look and feel of a completed project that mee
 
 ## Requirements
 
-This project uses The Movie DB API. The starter project has search functionality working for you already, as that isn't the point of this Sprint Challenge. There is no need to reference the API's documentation whatsoever.
+This project uses The Movie DB API. The API documentation is at [https://developers.themoviedb.org/3/getting-started/introduction], but much of what you will need is included below.
 
 The requirements for this project are as follows:
 
