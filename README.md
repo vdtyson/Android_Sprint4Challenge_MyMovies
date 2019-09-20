@@ -26,24 +26,30 @@ This project uses The Movie DB API. The starter project has search functionality
 
 The requirements for this project are as follows:
 
-1. A `FavoriteMovie` POJO object. Its members will be used to store favorite movies in your SQL database and allow users to add movies to their favorites and mark them as watched.
+1. A `FavoriteMovie` class. Its members will be used to store favorite movies in your Room database and allow users to add movies to their favorites and mark them as watched.
 
    > This will be your only local storage of movies, so you'll want to include anything you wish to  display to the user like the title
 
-2. A `MainActivity` that allows a user to:
+2. A `MoviesAPI` Retrofit class that implements a call to the "search/movie" endpoint.
 
-   1. Enter a search parameter and pass it to `MovieApiDao.searchMovies` and view a list of results (this must be done in a separate thread).
+   1. The API requires a key that is provided in the `MovieConstants` file under the val `API_KEY_PARAM`. Store this API key in SharedPreferences and retreive it when needed.
 
-   2. Select movies for favorites (store these in SQL db)
+3. A Room database that can perform CRUD operations with a `FavoriteMovie` entity.
+
+4. A `MainActivity` that allows a user to:
+
+   1. Enter a search parameter and pass it to the `MovieAPI` "search/movie" endpoint and view a list of results.
+
+   2. Select movies for favorites (store these in Room DB)
 
    3. Navigate to the favorites page
 
-3. A `FavoritesActivity` that allows a user to:
+5. A `FavoritesActivity` that allows a user to:
 
-   1. View a list of saved movies from the SQLite db
+   1. View a list of saved movies from the Room DB
 
    2. Mark individual movies as watched or not
 
    3. Remove movies from the favorites list
 
-4. All of the background classes we've worked with this week to facilitate database interactions. 
+6. All of the background classes we've worked with this week to facilitate database interactions. 
