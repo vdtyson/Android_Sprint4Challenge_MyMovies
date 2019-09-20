@@ -63,20 +63,14 @@ The requirements for this project are as follows:
 
       > There are several *query parameters* that do not change. They can be included as part of the endpoint in your request. For example, the endpoint might be `/search/movie?language=en-US&page=1&include_adult=false`
 
-      > You'll have to include query parameters in your function call, annotated with @Query, to pass in the api key and the search parameter. For example, the Retrofit interface declaration for a call to an endpoint `/friends` with query parameter `page` could be written like this:
+      > You'll have to include query parameters in your function call, each parameter annotated with @Query, to pass in the api key and the search parameter. For example, the Retrofit interface declaration for a call to an endpoint `/friends` with query parameter `page` could be written like this:
 
 ```
 @GET("/friends")
 fun friends(@Query("page") page: Int): Call<FriendResponse>
 ```
 
-2. Request results are returned in a JSON object, stored as a JSONArray in the `results` attribute of the object. You'll need to create a "parent" object to parse the result object, then you can retrieve the movies from the results attribute. For example, if there were a class `Movie` that stored the Movie results themselves, you could do the following:
-
-```
-class MoveSearchResult(val results: List<Movie>)
-```
-
-3. If you follow step 2 above (with a properly defined `Movie` class), then in your Retrofit `Callback` `onResponse`, the response body will contain a single `MovieSearchResult`, and the list of movies will be in the results member variable (in code, something like `response.body.results`).
+4. Request results are returned in a JSON object, stored as a JSONArray in the `results` attribute of the object. You have been provided with a `MovieSearchResult` and a `MovieOverview` object that GSON will use to parse the result object. In your Retrofit `Callback` `onResponse`, the response body will contain a single `MovieSearchResult`, and the list of movies will be in the results member variable (in code, something like `response.body.results`).
 
 ##Challenge
 1. Try using a `ViewModel` and `LiveData` to handle configuration changes and automatic updates.
