@@ -59,14 +59,14 @@ The requirements for this project are as follows:
 
 3. A call to the search/movie endpoint looks like this (for a search on "Avengers" with an API key of "12345"): `https://api.themoviedb.org/3/search/movie?language=en-US&page=1&include_adult=false&query=Avengers&api_key=12345`
 
-      > The base url is `https://api.themoviedb.org/3`
+      > The base url is `https://api.themoviedb.org/3/`
 
-      > There are several *query parameters* that do not change. They can be included as part of the endpoint in your request. For example, the endpoint might be `/search/movie?language=en-US&page=1&include_adult=false`
+      > There are several *query parameters* that do not change. They can be included as part of the endpoint in your request. For example, the endpoint might be `search/movie?language=en-US&page=1&include_adult=false`
 
-      > You'll have to include query parameters in your function call, each parameter annotated with @Query, to pass in the api key and the search parameter. For example, the Retrofit interface declaration for a call to an endpoint `/friends` with query parameter `page` could be written like this:
+      > You'll have to include query parameters in your function call, each parameter annotated with @Query, to pass in the api key and the search parameter. For example, the Retrofit interface declaration for a call to an endpoint `friends` with query parameter `page` could be written like this:
 
 ```
-@GET("/friends")
+@GET("friends")
 fun friends(@Query("page") page: Int): Call<FriendResponse>
 ```
 
