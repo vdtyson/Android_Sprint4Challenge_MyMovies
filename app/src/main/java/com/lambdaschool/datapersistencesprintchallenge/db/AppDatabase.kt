@@ -1,9 +1,10 @@
-package com.lambdaschool.datapersistencesprintchallenge
+package com.lambdaschool.datapersistencesprintchallenge.db
 
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import android.content.Context
+import com.lambdaschool.datapersistencesprintchallenge.model.FavoriteMovie
 
 @Database(entities = [FavoriteMovie::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {

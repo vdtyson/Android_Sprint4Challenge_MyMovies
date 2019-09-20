@@ -1,6 +1,7 @@
-package com.lambdaschool.datapersistencesprintchallenge
+package com.lambdaschool.datapersistencesprintchallenge.db
 
 import androidx.room.*
+import com.lambdaschool.datapersistencesprintchallenge.model.FavoriteMovie
 
 @Dao
 interface FavMovieDao {

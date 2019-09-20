@@ -4,15 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+
+<EditText android:id="@+id/mainActivity_searchView"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/mainActivity_submitBttn"
+        android:text="Submit"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/mainActivity_searchView"/>
+
+<androidx.recyclerview.widget.RecyclerView android:id="@+id/mainActivity_rv"
+
+    app:layout_constraintTop_toBottomOf= "@id/mainActivity_submitBttn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

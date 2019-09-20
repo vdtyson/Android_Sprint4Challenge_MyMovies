@@ -1,4 +1,4 @@
-package com.lambdaschool.datapersistencesprintchallenge
+package com.lambdaschool.datapersistencesprintchallenge.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -8,10 +8,9 @@ import com.lambdaschool.sprint4challenge_mymovies.model.MovieOverview
 class FavoriteMovie (
 
     @PrimaryKey(autoGenerate = true)
-    val favId: Int,
-    val title: Int,
-    val overview: String,
-    val userRating: Int,
+    val favId: Int? = null,
+    val title: String,
+    val wasWatched: Boolean = false,
     val description: String
 ) {
 
