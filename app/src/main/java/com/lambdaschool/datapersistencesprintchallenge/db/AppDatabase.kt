@@ -9,7 +9,6 @@ import com.lambdaschool.datapersistencesprintchallenge.model.FavoriteMovie
 @Database(entities = [FavoriteMovie::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun favMovieDao(): FavMovieDao
-
     companion object {
         var INSTANCE: AppDatabase? = null
 

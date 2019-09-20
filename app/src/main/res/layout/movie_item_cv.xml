@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <TextView android:id="@+id/movieCV_descriptionCV"
+        <TextView android:id="@+id/movieCV_descriptionTV"
 
             android:textStyle="italic"
             android:layout_marginTop="8dp"
@@ -38,12 +38,12 @@
             android:layout_height="wrap_content"
             tools:ignore="HardcodedText" />
 
-        <com.google.android.material.button.MaterialButton android:id="@+id/movieCV_detailButton"
+        <com.google.android.material.button.MaterialButton android:id="@+id/movieCV_deleteButton"
 
             android:textSize="18sp"
             android:paddingStart="0dp"
             android:textAlignment="viewStart"
-            android:text="Edit"
+            android:text="Delete"
             app:layout_constraintLeft_toLeftOf="@id/movieCV_titleTV"
             app:layout_constraintBottom_toBottomOf="parent"
             style="@style/Widget.MaterialComponents.Button.TextButton"

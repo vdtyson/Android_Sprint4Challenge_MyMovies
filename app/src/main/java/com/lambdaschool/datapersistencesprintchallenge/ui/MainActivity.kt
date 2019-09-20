@@ -19,7 +19,7 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity(), Callback<List<MovieOverview>> {
 
     var movies = listOf<MovieOverview>()
-    val rAdapter = MovieSearchItemRecyclerAdapter(movies)
+    val rAdapter = MovieSearchItemRecyclerAdapter(movies, this)
 
     override fun onFailure(call: Call<List<MovieOverview>>, t: Throwable) {
         Log.i("Failure", "There has been and error")
