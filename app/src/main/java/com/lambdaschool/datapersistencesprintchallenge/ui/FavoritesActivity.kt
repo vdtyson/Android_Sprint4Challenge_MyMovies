@@ -11,13 +11,13 @@ class FavoritesActivity : AppCompatActivity() {
 
     val db = AppDatabase.getAppDataBase(this)
     val movieList = db!!.favMovieDao().getAllFavoriteMovies()
-    val favRvAdapter = MovieSearchItemRecyclerAdapter(movieList, this)
+    val favRvAdapter = MovieFavItemRecyclerAdapter(movieList, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorites)
 
-
+        initFavRecyclerView()
     }
 
     fun initFavRecyclerView() {

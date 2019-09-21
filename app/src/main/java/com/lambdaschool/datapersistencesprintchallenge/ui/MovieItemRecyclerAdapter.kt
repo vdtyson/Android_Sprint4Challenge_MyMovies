@@ -27,7 +27,6 @@ class MovieSearchItemRecyclerAdapter(var movies: List<MovieOverview>, val contex
             val favMovie = FavoriteMovie(title = title, description = description)
             val db = AppDatabase.INSTANCE
             db?.favMovieDao()?.insertFavoriteMovie(favMovie)
-
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

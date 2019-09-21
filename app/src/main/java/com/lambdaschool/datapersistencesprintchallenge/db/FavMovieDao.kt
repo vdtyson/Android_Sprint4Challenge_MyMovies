@@ -14,8 +14,8 @@ interface FavMovieDao {
     @Delete
     fun deleteFavoriteMovie(favoriteMovie: FavoriteMovie)
 
-    @Query("SELECT * FROM FavoriteMovie WHERE favId == favId")
-    fun getFavoriteMovieByTitle(id: String): List<FavoriteMovie>
+   // @Query("SELECT * FROM FavoriteMovie WHERE favId == favId")
+   // fun getFavoriteMovieByTitle(id: String): List<FavoriteMovie>
 
     @Query("SELECT * FROM FavoriteMovie")
     fun getAllFavoriteMovies(): List<FavoriteMovie>

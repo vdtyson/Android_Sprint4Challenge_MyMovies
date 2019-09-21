@@ -6,12 +6,9 @@ import com.lambdaschool.sprint4challenge_mymovies.model.MovieOverview
 
 @Entity
 class FavoriteMovie (
-
     @PrimaryKey(autoGenerate = true)
     val favId: Int? = null,
     val title: String,
     val wasWatched: Boolean = false,
     val description: String
-) {
-
-}
+)

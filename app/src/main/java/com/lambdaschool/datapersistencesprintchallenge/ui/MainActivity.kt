@@ -27,8 +27,9 @@ class MainActivity : AppCompatActivity(), Callback<List<MovieOverview>> {
 
     override fun onResponse(call: Call<List<MovieOverview>>, response: Response<List<MovieOverview>>) {
         if(response.isSuccessful) {
-            movies = response.body()!!
-            rAdapter.update(movies)
+            val movies = response.body()
+            rAdapter.update(movies!!)
+
         }
     }
 
