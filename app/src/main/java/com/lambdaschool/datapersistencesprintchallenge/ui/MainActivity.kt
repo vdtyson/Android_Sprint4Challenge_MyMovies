@@ -1,5 +1,6 @@
 package com.lambdaschool.datapersistencesprintchallenge.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.lambdaschool.datapersistencesprintchallenge.R
 import com.lambdaschool.datapersistencesprintchallenge.apiaccess.MovieRequestInterface
 import com.lambdaschool.datapersistencesprintchallenge.model.FavoriteMovie
+import com.lambdaschool.datapersistencesprintchallenge.model.MovieSearchResult
 import com.lambdaschool.sprint4challenge_mymovies.apiaccess.MovieConstants
 import com.lambdaschool.sprint4challenge_mymovies.apiaccess.NetworkAdapter
 import com.lambdaschool.sprint4challenge_mymovies.model.MovieOverview
@@ -16,18 +18,18 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class MainActivity : AppCompatActivity(), Callback<List<MovieOverview>> {
+class MainActivity : AppCompatActivity(), Callback<MovieSearchResult> {
 
     var movies = listOf<MovieOverview>()
-    val rAdapter = MovieSearchItemRecyclerAdapter(movies, this)
+    var rAdapter = MovieSearchItemRecyclerAdapter(movies, this)
 
-    override fun onFailure(call: Call<List<MovieOverview>>, t: Throwable) {
+    override fun onFailure(call: Call<MovieSearchResult>, t: Throwable) {
         Log.i("Failure", "There has been and error")
     }
 
-    override fun onResponse(call: Call<List<MovieOverview>>, response: Response<List<MovieOverview>>) {
+    override fun onResponse(call: Call<MovieSearchResult>, response: Response<MovieSearchResult>) {
         if(response.isSuccessful) {
-            val movies = response.body()
+            val movies = response.body()?.results
             rAdapter.update(movies!!)
 
         }
@@ -38,7 +40,10 @@ class MainActivity : AppCompatActivity(), Callback<List<MovieOverview>> {
         setContentView(R.layout.activity_main)
 
         initRecyclerView()
-
+        mainActivity_favoriteBttn.setOnClickListener {
+            val intent = Intent(this, FavoritesActivity::class.java )
+            startActivity(intent)
+        }
         mainActivity_submitBttn.setOnClickListener {
             var queryText: String = mainActivity_searchView.text.toString()
             if(queryText.isNotBlank()) {

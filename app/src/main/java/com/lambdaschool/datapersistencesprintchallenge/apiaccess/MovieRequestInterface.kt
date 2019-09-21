@@ -1,5 +1,6 @@
 package com.lambdaschool.datapersistencesprintchallenge.apiaccess
 
+import com.lambdaschool.datapersistencesprintchallenge.model.MovieSearchResult
 import com.lambdaschool.sprint4challenge_mymovies.apiaccess.MovieConstants
 import com.lambdaschool.sprint4challenge_mymovies.model.MovieOverview
 import okhttp3.OkHttpClient
@@ -15,11 +16,11 @@ import java.util.concurrent.TimeUnit
 
 interface MovieRequestInterface {
 
-    @GET("${MovieConstants.SEARCH_MOVIES_ENDPOINT}?api_key={api_key}&query={query}")
+    @GET("search/movie")
     fun searchMovie(
         @Query("api_key") api_key: String,
         @Query("query") query: String
-    ) : Call<List<MovieOverview>>
+    ) : Call<MovieSearchResult>
 
     companion object {
         fun create(): MovieRequestInterface {

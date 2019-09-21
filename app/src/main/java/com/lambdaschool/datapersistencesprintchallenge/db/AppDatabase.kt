@@ -6,7 +6,7 @@ import androidx.room.RoomDatabase
 import android.content.Context
 import com.lambdaschool.datapersistencesprintchallenge.model.FavoriteMovie
 
-@Database(entities = [FavoriteMovie::class], version = 1)
+@Database(entities = [FavoriteMovie::class], version = 1, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun favMovieDao(): FavMovieDao
     companion object {
