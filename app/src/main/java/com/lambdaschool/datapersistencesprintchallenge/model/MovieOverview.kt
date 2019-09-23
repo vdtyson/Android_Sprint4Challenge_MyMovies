@@ -1,6 +1,9 @@
 package com.lambdaschool.sprint4challenge_mymovies.model
 
-class MovieSearchResult(val results: List<MovieOverview>)
+import com.google.gson.annotations.SerializedName
+
+
+
 
 class MovieOverview(
         val id: Int,
